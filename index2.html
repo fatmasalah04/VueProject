@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Learn vue.js</title>
+</head>
+
+<body>
+
+    <div id="elzeroo-app">
+        <h1>Welcome to app</h1>
+        <p>Welcome {{'Mr ' + name }} we are happy to see you</p>
+        <p> Your age is {{age + ' years'}}</p>
+        <p> your First skills is {{skills[0] }}</p>
+        <p> You are {{isSubscriibed ? 'Subscriibed' : 'Not Subscriibed'}}</p>
+
+        <p> your first test name is: {{completedTest[0].testName}}</p>
+        <p> your first test result is: {{completedTest[0].testResult}}</p>
+        <p>{{date}}</p>
+        <p>{{yourAgeinday()}}</p>
+    </div>
+
+
+    <script src="js/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#elzeroo-app',
+            data: {
+                name: 'Fatma',
+                age: 36,
+                date: 'today',
+                skills: ['HTML', 'CSS', 'JS'],
+                isSubscriibed: false,
+                completedTest: [{
+                    testName: 'First Test',
+                    testResult: '80%'
+                }, {
+                    testName: 'Second Test',
+                    testResult: '70%'
+                }, {
+                    testName: 'Third Test',
+                    testResult: '50%'
+                }, ],
+            },
+            methods: {
+                yourAgeinday: function() {
+                    return 'Your Age In Days Is' + this.age * 365;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

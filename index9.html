@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="elzeroo-app">
+    <h1>Welcome to app</h1>
+    <app-article v-for = "post in posts" :author="post.author" :id="post.id"></app-article>
+    </div>
+
+    <script src="js/vue.js"></script>
+    <script>
+    Vue.component('app-article', {
+      data: function() {
+        return{
+          count: 0
+        }
+      },
+      props: ['author','id'],
+      template: '<p> Author is {{ author }} and his Id Is {{id}} </p>'
+    })
+      var vm = new Vue ({
+        el: '#elzeroo-app' ,
+        data: {
+          posts: [
+          {
+            id: '1',
+            author: 'Osama',
+            title: 'Article Number One'
+          },
+          {
+            id: '2',
+            author: 'Ahmed',
+            title: 'Article Number Two'
+          },
+          {
+            id: '3',
+            author: 'Omar',
+            title: 'Article Number Three'
+
+          },
+          {
+            id: '4',
+            author: 'Samy',
+            title: 'Article Number Four'
+          },
+        ],
+
+        },
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="elzeroo-app">
+    <h1>Welcome to app</h1>
+    <p>{{calcAge()}}</p>
+    <p>{{calAge}}</p>
+    <p>{{calAge}}</p>
+
+    </div>
+
+    <script src="js/vue.js"></script>
+    <script>
+      var vm = new Vue ({
+        el: '#elzeroo-app' ,
+        data:{
+          age: 36,
+          message:'Elzero Web School'
+        },
+        methods: {
+          calcAge: function(){
+            console.log('Run');
+            return this.age * 2;
+          }
+        },
+        //Method response to certain action
+        // main difference between Methods & computed that cached calAge every time we run program
+        // computed مش مستني مني ادوس على حاجد معينة زي like & submit
+        computed:{
+          calAge: function(){
+            console.log('Run');
+            return this.age * 2;
+          }
+        },
+      })
+    </script>
+  </body>
+</html>

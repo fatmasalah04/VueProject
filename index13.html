@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="elzeroo-app">
+    <h1>Welcome to app</h1>
+    <label>Egyptian Pound</label>
+    <input type="text" v-model="eg">
+    <label>Saudi Riyal</label>
+    <input type="text" v-model="sar">
+    </div>
+
+    <script src="js/vue.js"></script>
+    <script>
+      var vm = new Vue ({
+        el: '#elzeroo-app' ,
+        data:{
+        eg: 0,
+        sar: 0,
+        },
+        methods: {
+
+        },
+        computed:{
+
+        },
+        watch:{
+          eg: function(v){
+            this.sar = v / 5;
+          },
+          sar: function(v){
+            this.eg = v * 5;
+          },
+        },
+      })
+    </script>
+  </body>
+</html>

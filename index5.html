@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="elzeroo-app">
+    <h1>Welcome to app</h1>
+<!-- if there is name =>write welcome if there is not =>empty -->
+    <p v-if="age > 50">You are too old</p>
+    <p v-else-if="age > 15 && age < 40">You are not too old</p>
+    <p v-else>You are still young</p>
+    </div>
+    <script src="js/vue.js"></script>
+    <script>
+      var vm = new Vue ({
+        el :'#elzeroo-app' ,
+        data:{
+          name: 'Fatma',
+          age: 10,
+        },
+      })
+
+    </script>
+  </body>
+</html>

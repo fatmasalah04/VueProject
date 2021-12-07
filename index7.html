@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="elzeroo-app">
+    <h1>Welcome to app</h1>
+    <form class="" action="" method="post">
+      Email:
+      <input type="text" name="" :value="source" placeholder="Using v-bind">    <!--one way binding-->
+      <input type="text" name="" v-model="source" placeholder="Using v-model">  <!--two way binding-->
+
+    </form>
+      Your Name Is {{source}}
+    </div>
+    <script src="js/vue.js"></script>
+    <script>
+      var vm = new Vue ({
+        el :'#elzeroo-app' ,
+        data:{
+          source: 'Fatma',
+        },
+      })
+
+    </script>
+  </body>
+</html>

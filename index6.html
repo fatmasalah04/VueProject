@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+  </head>
+  <body>
+    <div id="elzeroo-app">
+    <h1>Welcome to app</h1>
+    <p>Welcome {{ name }}</p>
+    <a :href="imageUrl">
+      <img :src="imageSrc" :alt="imageAltText">
+    <!-- v-bind -->
+    </a>
+    <p>Counter is {{counter}}</p>
+    <button @click.self="counter+=2">Increase Counter</button>
+    <!-- v-on -->
+    </div>
+
+    <script src="js/vue.js"></script>
+    <script>
+      var vm = new Vue ({
+        el :'#elzeroo-app' ,
+        data:{
+          name: 'Fatma',
+          imageSrc: 'img/Untitled.png',
+          imageAltText: 'The Alternate Text',
+          imageUrl: 'https://www.google.com.eg',
+          counter: 0,
+        },
+      })
+
+    </script>
+  </body>
+</html>

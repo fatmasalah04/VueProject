@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="elzeroo-app">
+    <h1>Welcome to app</h1>
+      <label>Write Youe Username:</label>
+      <input type="text" v-model="username">
+      <p>{{validateUsername}}</p>
+    </div>
+
+    <script src="js/vue.js"></script>
+    <script>
+      var vm = new Vue ({
+        el: '#elzeroo-app' ,
+        data:{
+        username:'',
+        },
+        methods: {
+
+        },
+        computed:{
+          validateUsername: function(){
+            if (!this.username){
+              return 'Username Cant Be Empty';
+            } else if (this.username.length < 8) {
+              return 'Username Is Too Short';
+            }else if (! isNaN(this.username)) {
+              return 'Username Cant Be Number Only';
+            } else {
+              return'Hello ' + this.username + ' Every thing Is Good'
+            }
+          },
+        },
+      })
+    </script>
+  </body>
+</html>
